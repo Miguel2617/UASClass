@@ -1,0 +1,449 @@
+@prefix : <http://www.semanticweb.org/vieira/ontologies/2023/2/untitled-ontology-47#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://w3id.org/hsu-aut/UASClass> .
+
+<http://w3id.org/hsu-aut/UASClass> rdf:type owl:Ontology ;
+                                    owl:imports <http://w3id.org/hsu-aut/eu-regulation2019-945/1.1.0> ,
+                                                <http://w3id.org/hsu-aut/eu-regulation2019-947/1.0.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#hasDistance
+<http://w3id.org/hsu-aut/eu-regulation2019-945#hasDistance> owl:equivalentProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasDistance> .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-947#hasDistance
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#hasMTOM
+<http://w3id.org/hsu-aut/eu-regulation2019-945#hasMTOM> owl:equivalentProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasMaximumTakeOffMass> .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxSpeed
+<http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxSpeed> owl:equivalentProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasMaximumOperatingSpeed> .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-947#hasMaximumOperatingSpeed
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-947#hasMaximumTakeOffMass
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#C0
+<http://w3id.org/hsu-aut/eu-regulation2019-945#C0> owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                                owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                       owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasDistance> ;
+                                                                                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#Distance>
+                                                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#isDistanceOf> ;
+                                                                                                                                                                                   owl:someValuesFrom <http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot>
+                                                                                                                                                                                 ]
+                                                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#distanceValue> ;
+                                                                                                                                                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                                                                                        owl:onDatatype xsd:double ;
+                                                                                                                                                                                                        owl:withRestrictions ( [ xsd:maxInclusive "50.0"^^xsd:double
+                                                                                                                                                                                                                               ]
+                                                                                                                                                                                                                             )
+                                                                                                                                                                                                      ]
+                                                                                                                                                                                 ]
+                                                                                                                                                                               ) ;
+                                                                                                                                                            rdf:type owl:Class
+                                                                                                                                                          ]
+                                                                                                                                     ]
+                                                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                                                       owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasFollowMeMode> ;
+                                                                                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#FollowMeMode>
+                                                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#followMeModeOn> ;
+                                                                                                                                                                                   owl:hasValue "true"^^xsd:boolean
+                                                                                                                                                                                 ]
+                                                                                                                                                                               ) ;
+                                                                                                                                                            rdf:type owl:Class
+                                                                                                                                                          ]
+                                                                                                                                     ]
+                                                                                                                                   ) ;
+                                                                                                                rdf:type owl:Class
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Class ;
+                                                                                                                owl:unionOf ( [ rdf:type owl:Class ;
+                                                                                                                                owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasFollowMeMode> ;
+                                                                                                                                                   owl:someValuesFrom <http://w3id.org/hsu-aut/eu-regulation2019-945#FollowMeMode>
+                                                                                                                                                 ]
+                                                                                                                              ]
+                                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasFollowMeMode> ;
+                                                                                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#FollowMeMode>
+                                                                                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#followMeModeOn> ;
+                                                                                                                                                                            owl:hasValue "false"^^xsd:boolean
+                                                                                                                                                                          ]
+                                                                                                                                                                        ) ;
+                                                                                                                                                     rdf:type owl:Class
+                                                                                                                                                   ]
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                              ]
+                                                                                                            )
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasRemotePilot> ;
+                                                                                                owl:someValuesFrom <http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot>
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMTOM> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxExclusive "0.25"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxHeight> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "120.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxNominalVoltage> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "24.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxSpeed> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "19.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasAutomaticControlMode> ;
+                                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#C1
+<http://w3id.org/hsu-aut/eu-regulation2019-945#C1> owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                                owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                       owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasDistance> ;
+                                                                                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#Distance>
+                                                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#isDistanceOf> ;
+                                                                                                                                                                                   owl:someValuesFrom <http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot>
+                                                                                                                                                                                 ]
+                                                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#distanceValue> ;
+                                                                                                                                                                                   owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                                                                                        owl:onDatatype xsd:double ;
+                                                                                                                                                                                                        owl:withRestrictions ( [ xsd:maxInclusive "50.0"^^xsd:double
+                                                                                                                                                                                                                               ]
+                                                                                                                                                                                                                             )
+                                                                                                                                                                                                      ]
+                                                                                                                                                                                 ]
+                                                                                                                                                                               ) ;
+                                                                                                                                                            rdf:type owl:Class
+                                                                                                                                                          ]
+                                                                                                                                     ]
+                                                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                                                       owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasFollowMeMode> ;
+                                                                                                                                       owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#FollowMeMode>
+                                                                                                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#followMeModeOn> ;
+                                                                                                                                                                                   owl:hasValue "true"^^xsd:boolean
+                                                                                                                                                                                 ]
+                                                                                                                                                                               ) ;
+                                                                                                                                                            rdf:type owl:Class
+                                                                                                                                                          ]
+                                                                                                                                     ]
+                                                                                                                                   ) ;
+                                                                                                                rdf:type owl:Class
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Class ;
+                                                                                                                owl:unionOf ( [ rdf:type owl:Class ;
+                                                                                                                                owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasFollowMeMode> ;
+                                                                                                                                                   owl:someValuesFrom <http://w3id.org/hsu-aut/eu-regulation2019-945#FollowMeMode>
+                                                                                                                                                 ]
+                                                                                                                              ]
+                                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasFollowMeMode> ;
+                                                                                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#FollowMeMode>
+                                                                                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#followMeModeOn> ;
+                                                                                                                                                                            owl:hasValue "false"^^xsd:boolean
+                                                                                                                                                                          ]
+                                                                                                                                                                        ) ;
+                                                                                                                                                     rdf:type owl:Class
+                                                                                                                                                   ]
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                              ]
+                                                                                                            )
+                                                                                              ]
+                                                                                              [ rdf:type owl:Class ;
+                                                                                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxHeight> ;
+                                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "120.0"^^xsd:double
+                                                                                                                                                            ]
+                                                                                                                                                          )
+                                                                                                                                   ]
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#maxHeightSelectable> ;
+                                                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                                                              ]
+                                                                                                            )
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasRemotePilot> ;
+                                                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot>
+                                                                                                                                          [ rdf:type owl:Class ;
+                                                                                                                                            owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasDroneLicense> ;
+                                                                                                                                                            owl:hasValue <http://w3id.org/hsu-aut/eu-regulation2019-947#A2>
+                                                                                                                                                          ]
+                                                                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasDroneLicense> ;
+                                                                                                                                                            owl:hasValue <http://w3id.org/hsu-aut/eu-regulation2019-947#A1/A3>
+                                                                                                                                                          ]
+                                                                                                                                                        )
+                                                                                                                                          ]
+                                                                                                                                        ) ;
+                                                                                                                     rdf:type owl:Class
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMTOM> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxExclusive "0.9"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxNominalVoltage> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "24.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxSpeed> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "19.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasAutomaticControlMode> ;
+                                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#C2
+<http://w3id.org/hsu-aut/eu-regulation2019-945#C2> owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxHeight> ;
+                                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "120.0"^^xsd:double
+                                                                                                                                                            ]
+                                                                                                                                                          )
+                                                                                                                                   ]
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#maxHeightSelectable> ;
+                                                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                                                              ]
+                                                                                                            )
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasRemotePilot> ;
+                                                                                                owl:someValuesFrom <http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot>
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMTOM> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxExclusive "4.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxNominalVoltage> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "48.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasAutomaticControlMode> ;
+                                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#C3
+<http://w3id.org/hsu-aut/eu-regulation2019-945#C3> owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                                owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxHeight> ;
+                                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "120.0"^^xsd:double
+                                                                                                                                                            ]
+                                                                                                                                                          )
+                                                                                                                                   ]
+                                                                                                              ]
+                                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#maxHeightSelectable> ;
+                                                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                                                              ]
+                                                                                                            )
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasRemotePilot> ;
+                                                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot>
+                                                                                                                                          [ rdf:type owl:Class ;
+                                                                                                                                            owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasDroneLicense> ;
+                                                                                                                                                            owl:hasValue <http://w3id.org/hsu-aut/eu-regulation2019-947#A2>
+                                                                                                                                                          ]
+                                                                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasDroneLicense> ;
+                                                                                                                                                            owl:hasValue <http://w3id.org/hsu-aut/eu-regulation2019-947#A1/A3>
+                                                                                                                                                          ]
+                                                                                                                                                        )
+                                                                                                                                          ]
+                                                                                                                                        ) ;
+                                                                                                                     rdf:type owl:Class
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMTOM> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxExclusive "25.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMaxNominalVoltage> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "48.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasAutomaticControlMode> ;
+                                                                                                owl:hasValue "true"^^xsd:boolean
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#C4
+<http://w3id.org/hsu-aut/eu-regulation2019-945#C4> owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                                owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                                   owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasFollowMeMode> ;
+                                                                                                                   owl:someValuesFrom <http://w3id.org/hsu-aut/eu-regulation2019-945#FollowMeMode>
+                                                                                                                 ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasRemotePilot> ;
+                                                                                                owl:someValuesFrom [ owl:intersectionOf ( <http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot>
+                                                                                                                                          [ rdf:type owl:Class ;
+                                                                                                                                            owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasDroneLicense> ;
+                                                                                                                                                            owl:hasValue <http://w3id.org/hsu-aut/eu-regulation2019-947#A2>
+                                                                                                                                                          ]
+                                                                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                                                                            owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-947#hasDroneLicense> ;
+                                                                                                                                                            owl:hasValue <http://w3id.org/hsu-aut/eu-regulation2019-947#A1/A3>
+                                                                                                                                                          ]
+                                                                                                                                                        )
+                                                                                                                                          ]
+                                                                                                                                        ) ;
+                                                                                                                     rdf:type owl:Class
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasMTOM> ;
+                                                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                     owl:onDatatype xsd:double ;
+                                                                                                                     owl:withRestrictions ( [ xsd:maxExclusive "25.0"^^xsd:double
+                                                                                                                                            ]
+                                                                                                                                          )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://w3id.org/hsu-aut/eu-regulation2019-945#hasAutomaticControlMode> ;
+                                                                                                owl:hasValue "false"^^xsd:boolean
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#Distance
+<http://w3id.org/hsu-aut/eu-regulation2019-945#Distance> owl:equivalentClass <http://w3id.org/hsu-aut/eu-regulation2019-947#Distance> .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot
+<http://w3id.org/hsu-aut/eu-regulation2019-945#RemotePilot> owl:equivalentClass <http://w3id.org/hsu-aut/eu-regulation2019-947#RemotePilot> .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-945#UAS
+<http://w3id.org/hsu-aut/eu-regulation2019-945#UAS> owl:equivalentClass <http://w3id.org/hsu-aut/eu-regulation2019-947#UnmannedAircraftSystem> .
+
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-947#Distance
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-947#RemotePilot
+
+###  http://w3id.org/hsu-aut/eu-regulation2019-947#UnmannedAircraftSystem
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
