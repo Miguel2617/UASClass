@@ -8,7 +8,7 @@
 
 <http://w3id.org/hsu-aut/UASClass> rdf:type owl:Ontology ;
                                     owl:imports <http://w3id.org/hsu-aut/eu-regulation2019-945/1.1.0> ,
-                                                <http://w3id.org/hsu-aut/eu-regulation2019-947/1.0.0> .
+                                                <http://w3id.org/hsu-aut/eu-regulation2019-947/2.0.0> .
 
 #################################################################
 #    Object Properties
